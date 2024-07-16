@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload CSV</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Upload CSV File</h2>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv"><br><br>
+        <input type="submit" value="Upload">
+    </form>
+    <a href="{{ url_for('view_files') }}">View Uploaded Files</a><br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

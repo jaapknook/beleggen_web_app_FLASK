@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Files</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Uploaded CSV Files</h2>
+    <ul>
+        {% for file in files %}
+            <li><a href="{{ url_for('uploaded_file', username=current_user.username, filename=file.filename) }}">{{ file.filename }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('upload') }}">Upload Another File</a><br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
