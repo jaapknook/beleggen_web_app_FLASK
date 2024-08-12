@@ -11,7 +11,7 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 file_path = os.path.abspath(os.getcwd()) + r"\instance\users.db"
 app.config['SQLALCHEMY_DATABASE_URI'] = r'sqlite:///' + file_path
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
+   
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
