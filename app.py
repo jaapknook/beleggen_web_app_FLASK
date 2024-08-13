@@ -8,7 +8,8 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
-app.config["MONGO_URI"] = "mongodb+srv://jaapknook:AW539wrGEaoq97XY@cluster0.n84sjfo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+API_KEY = os.environ.get('API_KEY')
+app.config["MONGO_URI"] = f"mongodb+srv://{API_KEY}@cluster0.n84sjfo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 mongo = PyMongo(app)
 bcrypt = Bcrypt(app)
