@@ -8,16 +8,12 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
-app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config["MONGO_URI"] = "mongodb+srv://jaapknook:AW539wrGEaoq97XY@cluster0.n84sjfo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 mongo = PyMongo(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
-
-# Ensure upload folder exists
-os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 class User(UserMixin):
     def __init__(self, _id, username, password):
