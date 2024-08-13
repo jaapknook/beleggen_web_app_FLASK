@@ -1,0 +1,6 @@
+ToDo list beleggen_web_app_FLASK:
+
+- Een file per user mogelijk
+- Verwijderen en vervangen van file mogelijk maken
+
+- Portfolio performance 
